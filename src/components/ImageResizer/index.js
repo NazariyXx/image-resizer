@@ -25,6 +25,7 @@ const ImageResizer = (props) => {
   const [naturalHeight, setNaturalHeight] = useState(0);
 
   const [showOptions, setShowOptions] = useState(false);
+  const [inputActive, setInputActive] = useState(false);
 
   const imageRef = useRef(null);
   const canvasRef = useRef(null);
@@ -214,6 +215,10 @@ const ImageResizer = (props) => {
   const areaPositionX = useMemo(() => positionX * widthRatio / 100, [positionX, widthRatio]);
   const areaPositionY = useMemo(() => positionY * heightRatio / 100, [positionY, heightRatio]);
 
+  const onBlur = useCallback(() => detectMobileDevice() && setInputActive(false), []);
+  const onClick = useCallback(() => detectMobileDevice() && setInputActive(true), []);
+  const detectMobileDevice = useCallback(() => (window.innerWidth <= 600 && window.innerHeight <= 800), []);
+
   return (
     <div className='image-resizer'>
       <div className='editable-area'>
@@ -239,29 +244,43 @@ const ImageResizer = (props) => {
           property='Width'
           value={width}
           onChange={widthHandler}
+          onClick={onClick}
+          onBlur={onBlur}
           minValue={1}
         />
         <Option
           property='Height'
           value={height}
           onChange={heightHandler}
+          onClick={onClick}
+          onBlur={onBlur}
           minValue={1}
         />
         <Option
           property='Position X'
           value={positionX}
           onChange={positionXHandler}
+          onClick={onClick}
+          onBlur={onBlur}
           minValue={0}
         />
         <Option
           property='Position Y'
           value={positionY}
           onChange={positionYHandler}
+          onClick={onClick}
+          onBlur={onBlur}
           minValue={0}
         />
       </div>
 
-      <button className='crop-image-btn' onClick={cropImage}>Crop IMAGE</button>
+      <button
+        className='crop-image-btn'
+        onClick={cropImage}
+        style={{
+          opacity: inputActive ? 0 : 1,
+        }}
+      >Crop IMAGE</button>
     </div>
   );
 };

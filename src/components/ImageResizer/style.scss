@@ -1,7 +1,8 @@
 .image-resizer {
   height: 100vh;
+  height: calc(100vh - 60px);
   display: flex;
-  overflow:hidden
+  overflow:hidden;
 }
 
 .editable-area {
@@ -108,12 +109,14 @@
   .options-menu {
     width: 0;
     height: 100vh;
+    height: 100%;
     top: 0;
     right: 0;
     z-index: 99;
     position: absolute;
     overflow: hidden;
     transition: width 0.7s ease-in-out;
+    overflow-y: scroll;
   }
   .options-menu-active {
     width: 60vw;

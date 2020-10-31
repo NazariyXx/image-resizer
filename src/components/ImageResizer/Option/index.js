@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './style.scss';
 
 const Option = (props) => {
-  const { property, onChange, value, minValue } = props;
+  const { property, onChange, value, minValue, onBlur, onClick } = props;
 
   return (
     <div className='option'>
@@ -16,6 +16,8 @@ const Option = (props) => {
         id={property}
         value={Number(value).toString()}
         onChange={onChange}
+        onBlur={onBlur}
+        onClick={onClick}
       />
     </div>
   );
@@ -24,6 +26,8 @@ const Option = (props) => {
 Option.propTypes = {
   property: PropTypes.string,
   onChange: PropTypes.func,
+  onBlur: PropTypes.func,
+  onClick: PropTypes.func,
   value: PropTypes.number,
   minValue: PropTypes.number,
 };

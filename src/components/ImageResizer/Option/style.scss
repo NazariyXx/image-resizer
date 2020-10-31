@@ -13,3 +13,9 @@
     outline-color: #000;
   }
 }
+
+@media (max-width: 480px) {
+  .option {
+    padding: 20px 20px;
+  }
+}
