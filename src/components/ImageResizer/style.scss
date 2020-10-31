@@ -1,0 +1,136 @@
+.image-resizer {
+  height: 100vh;
+  display: flex;
+  overflow:hidden
+}
+
+.editable-area {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2.5 1;
+  padding: 0 48px;
+}
+
+.image-container {
+  position: relative;
+  height: auto;
+  padding: 0;
+  .image {
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.3);
+    object-fit: contain;
+  }
+  canvas {
+    display: none;
+  }
+  .crop-area {
+    transition: 0.5s;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: #86b3fe;
+    border: 2px solid #2f7dfa;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+  }
+}
+
+.options-menu-toggler {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 12px;
+  top: 15vh;
+  display: none;
+  background-color: #fff;
+  padding: 7px;
+  border-radius: 50%;
+  transition: all 0.7s ease-in-out;
+
+  &-active {
+    right: calc(12px + 60vw);
+  }
+}
+
+.options-menu {
+  display: flex;
+  width: 20vw;
+  flex-direction: column;
+  background-color: #fff;
+  position: relative;
+
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid rgb(205, 209, 216);
+    padding-bottom: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.crop-image-btn {
+  width: 270px;
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  text-align: center;
+  padding: 40px 20px;
+  border: none;
+  box-shadow: 0 2px 8px 0 rgba(50,50,50,.3);
+  color: #fff;
+  background-color: #4d90fe;
+  border-radius: 5px;
+  font-size: 1.4em;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+@media (max-width: 1920px) {
+  .options-menu {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .options-menu {
+    width: 40vw;
+  }
+  .editable-area {
+    flex: 1.5 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .options-menu {
+    width: 0;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    position: absolute;
+    overflow: hidden;
+    transition: width 0.7s ease-in-out;
+  }
+  .options-menu-active {
+    width: 60vw;
+  }
+  .options-menu-toggler {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .options-menu-active {
+    width: 80vw;
+  }
+  .options-menu-toggler-active {
+    right: calc(12px + 80vw);
+  }
+  .crop-image-btn {
+    width: 200px;
+  }
+}
