@@ -1,6 +1,5 @@
 .image-resizer {
   height: 100vh;
-  height: calc(100vh - 60px);
   display: flex;
   overflow:hidden;
 }
@@ -106,6 +105,9 @@
 }
 
 @media (max-width: 768px) {
+  .image-resizer {
+    height: calc(100vh - 60px);
+  }
   .options-menu {
     width: 0;
     height: 100vh;
