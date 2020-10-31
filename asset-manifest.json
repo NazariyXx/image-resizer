@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/image-resizer/static/css/main.2a483e16.chunk.css",
+    "main.js": "/image-resizer/static/js/main.2a768451.chunk.js",
+    "main.js.map": "/image-resizer/static/js/main.2a768451.chunk.js.map",
+    "runtime-main.js": "/image-resizer/static/js/runtime-main.788490f2.js",
+    "runtime-main.js.map": "/image-resizer/static/js/runtime-main.788490f2.js.map",
+    "static/css/2.86e65bd8.chunk.css": "/image-resizer/static/css/2.86e65bd8.chunk.css",
+    "static/js/2.c2963d48.chunk.js": "/image-resizer/static/js/2.c2963d48.chunk.js",
+    "static/js/2.c2963d48.chunk.js.map": "/image-resizer/static/js/2.c2963d48.chunk.js.map",
+    "index.html": "/image-resizer/index.html",
+    "static/css/2.86e65bd8.chunk.css.map": "/image-resizer/static/css/2.86e65bd8.chunk.css.map",
+    "static/css/main.2a483e16.chunk.css.map": "/image-resizer/static/css/main.2a483e16.chunk.css.map",
+    "static/js/2.c2963d48.chunk.js.LICENSE.txt": "/image-resizer/static/js/2.c2963d48.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/image-resizer/static/media/Roboto-Regular.03523cf5.ttf",
+    "static/media/UploadIcon.svg": "/image-resizer/static/media/UploadIcon.469126df.svg",
+    "static/media/settings.ea975a85.svg": "/image-resizer/static/media/settings.ea975a85.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.788490f2.js",
+    "static/css/2.86e65bd8.chunk.css",
+    "static/js/2.c2963d48.chunk.js",
+    "static/css/main.2a483e16.chunk.css",
+    "static/js/main.2a768451.chunk.js"
+  ]
+}
